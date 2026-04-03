@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaShop | Modern Satış Sitesi</title>
+  <meta name="description" content="Modern tasarıma sahip basit ve profesyonel satış sitesi arayüzü." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Üst bilgi alanı -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <p>Yeni sezon ürünleri yayında</p>
+      <a href="#products">Hemen İncele</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">NovaShop</a>
+
+      <nav class="nav" id="navMenu">
+        <a href="#hero">Ana Sayfa</a>
+        <a href="#products">Ürünler</a>
+        <a href="#features">Özellikler</a>
+        <a href="#contact">İletişim</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-button" id="cartToggleBtn" type="button">
+          <span>Sepet</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-button" id="menuButton" type="button" aria-label="Menüyü aç">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <span class="badge">Modern satış deneyimi</span>
+          <h1>Şık, hızlı ve profesyonel bir satış sitesi</h1>
+          <p>
+            Veritabanı olmadan çalışan bu yapı; ürün listeleme, kategori filtreleme,
+            sepet yönetimi ve modern kullanıcı arayüzü ile etkileyici bir demo deneyimi sunar.
+          </p>
+          <div class="hero-buttons">
+            <a href="#products" class="btn btn-primary">Ürünleri Keşfet</a>
+            <a href="#features" class="btn btn-secondary">Detayları Gör</a>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <strong>+1200</strong>
+              <span>Mutlu müşteri</span>
+            </div>
+            <div>
+              <strong>24 Saat</strong>
+              <span>Hızlı destek</span>
+            </div>
+            <div>
+              <strong>%100</strong>
+              <span>Demo uyumlu yapı</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-content">
+            <p class="mini-title">Öne çıkan ürün</p>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80" alt="Öne çıkan ürün" />
+            <div class="hero-product-info">
+              <div>
+                <h3>Nova Sneaker Pro</h3>
+                <p>Günlük kullanım için modern tasarım</p>
+              </div>
+              <strong>2.499 TL</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Arama ve filtre -->
+    <section class="toolbar-section">
+      <div class="container toolbar">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Ürün ara..." />
+        </div>
+
+        <div class="filter-box">
+          <select id="categoryFilter">
+            <option value="all">Tüm Kategoriler</option>
+            <option value="Ayakkabı">Ayakkabı</option>
+            <option value="Teknoloji">Teknoloji</option>
+            <option value="Aksesuar">Aksesuar</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ürünler -->
+    <section class="products-section" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-tag">Koleksiyon</span>
+            <h2>Popüler ürünler</h2>
+          </div>
+          <p>
+            Ürünleri kategoriye göre filtreleyebilir, arama yapabilir ve tek tıkla sepete ekleyebilirsin.
+          </p>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <!-- Özellikler -->
+    <section class="features-section" id="features">
+      <div class="container features-grid">
+        <article class="feature-card">
+          <h3>Modern Tasarım</h3>
+          <p>Temiz arayüz, yumuşak geçişler ve profesyonel görünüm sunar.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Hızlı Kullanım</h3>
+          <p>Basit JavaScript yapısı sayesinde hafif ve hızlı çalışan bir sistemdir.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Kolay Geliştirme</h3>
+          <p>HTML, CSS ve JS dosyaları ayrı olduğu için düzenlemesi çok kolaydır.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sepet yan paneli -->
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-panel-header">
+      <h3>Sepetim</h3>
+      <button type="button" id="closeCartBtn">✕</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Toplam</span>
+        <strong id="cartTotal">0 TL</strong>
+      </div>
+      <button class="btn btn-primary full-width" id="checkoutBtn" type="button">Siparişi Tamamla</button>
+      <button class="btn btn-light full-width" id="clearCartBtn" type="button">Sepeti Temizle</button>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container footer-content">
+      <div>
+        <a href="#" class="logo footer-logo">NovaShop</a>
+        <p>Modern satış sitesi arayüzü örneği</p>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <p>info@novashop.com</p>
+        <p>İstanbul / Türkiye</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
